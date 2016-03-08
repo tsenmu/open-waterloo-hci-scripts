@@ -45,8 +45,17 @@ var shuffle = function() {
     } 
 }
 
+var deploy_run = function() {
+    var files = get_pde_files();
+    if (files.length > 0) {
+        if (files[0].indexOf('run_') !== -1) {
+            copy_file(files[0], dest);
+        }
+    }
+}
 
-// setInterval(shuffle, 1000 * 60 * 10);
-setInterval(shuffle, 1000);
+
+setInterval(shuffle, 1000 * 60 * 10);
+setInterval(deploy_run, 1000);
 
 
