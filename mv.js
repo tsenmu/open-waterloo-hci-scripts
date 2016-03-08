@@ -12,7 +12,7 @@ var get_pde_files = function() {
     var result = [];
     for (var i = 0; i < files.length; ++i) {
         var file = files[i];
-        if (path.extname(file, 'pde')) {
+        if (path.extname(file) === '.pde') {
             result.push(path.join(src, file));
         }
     }
@@ -46,6 +46,7 @@ var shuffle = function() {
 }
 
 
-setInterval(shuffle, 1000 * 60 * 10);
+// setInterval(shuffle, 1000 * 60 * 10);
+setInterval(shuffle, 1000);
 
 
